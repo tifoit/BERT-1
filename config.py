@@ -1,9 +1,11 @@
 base_params = {
     "embedder": Encoder,
     "embedder_params": {
+        "sequence_length": 512
+    }
 
     "transformer_block": {
-        "initializer_gain":
+        "initializer_gain": 1.0,
         # block layers
         "num_hidden_layers":12, 
         "hidden_size": 768,
@@ -16,4 +18,4 @@ base_params = {
         "gelu_dropout": 0.1,
         "allow_ffn_pad": False
     }
-        
+}

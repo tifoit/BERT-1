@@ -41,7 +41,7 @@ class TransformerStack(tf.layers.Layer):
         """
         # Variance scaling is used here because it seems to work in many problems.
         initializer = tf.variance_scaling_initializer(
-                self.params["initializer_gain"], mode="fan_avg", distribution="uniform")
+                self.params["initializer_gain"], mode="FAN_AVG", uniform=True)
         # Begin Transformer Encoder.
         with tf.variable_scope("transformer_encoder", initializer=initializer):
             # Calculate attention bias for encoder self-attention.
